@@ -9,15 +9,29 @@ const actions = {
 
 function reducer(state, action) {
   switch (action.type) {
-    case actions.SET_TASK:
-      return { ...state, task: action.payload.task };
-    
     case actions.ADD_TASK:
-        return{
-            ...state,
-            tasks: [...state.tasks, createTask(action.payload.title)],
-            task:''
-        }
+      return {
+        ...state,
+        tasks: [...state.tasks, createTask(action.payload.title)],
+        task: '',
+      };
+    case actions.TOGGLE_TASK:
+      return {
+        ...state,
+        tasks: state.tasks.map((task) =>
+          task.id === action.payload.id ? { ...task, completed: !task.completed } : task
+        ),
+      };
+    case actions.REMOVE_TASK:
+      return {
+        ...state,
+        tasks: state.tasks.filter((task) => task.id !== action.payload.id),
+      };
+    case actions.SET_TASK:
+      return {
+        ...state,
+        task: action.payload.task,
+      };
     default:
       return state;
   }
@@ -69,9 +83,17 @@ export default function TodoComponent() {
 
       <ul>
         {state.tasks.map(({id, title, completed})=> (
-            <li key={id}>
-                {title}
-            </li>
+           <li key={id}>
+           <span style={{ textDecoration: completed ? 'line-through' : 'none' }}>
+             {title}
+           </span>
+           <button onClick={() => dispatch({ type: actions.TOGGLE_TASK, payload: { id } })}>
+             Toggle
+           </button>
+           <button onClick={() => dispatch({ type: actions.REMOVE_TASK, payload: { id } })}>
+             Remove
+           </button>
+         </li>
         ))}
       </ul>
     </div>
