@@ -1,6 +1,29 @@
 .App {
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 100vh;
+  background-color: var(--chakra-colors-teal-500);
 }
+
+.App-form {
+  height: 40vh;
+  background-color: var(--chakra-colors-chakra-border-color);
+  width: 90vw;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+}
+
+/* .App-form form {
+  margin-bottom: 5px;
+} */
 
 .App-logo {
   height: 40vmin;
@@ -32,7 +55,12 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
+}
+
+ul {
+  list-style: none;
 }

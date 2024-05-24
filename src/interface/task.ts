@@ -1,7 +1,7 @@
 export interface Task {
-  id: number;
-  title: string;
-  completed: boolean;
+  id?: number;
+  title?: string;
+  completed?: boolean;
 }
 
 export interface State {
@@ -11,8 +11,5 @@ export interface State {
 
 export interface Action {
   type: string;
-  payload: {
-    id?: number;
-    title?: string;
-  };
+  payload: Task;
 }

@@ -1,8 +1,13 @@
-import React from 'react';
-import TodoComponent from './components/TodoApp';
+import React from "react";
+import TodoComponent from "./components/TodoApp";
+import { ChakraProvider } from "@chakra-ui/react";
 
 function App() {
-    return (<TodoComponent/>);
+  return (
+    <ChakraProvider>
+      <TodoComponent />
+    </ChakraProvider>
+  );
 }
 
 export default App;
