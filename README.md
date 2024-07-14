@@ -9,6 +9,9 @@
 
 > This is a study project, to develop a React app using useReduce Hook
 
+## 💻 See the demo
+If you want to see the demo, [click here](https://basic-todo-list-nu.vercel.app/)
+
 ## 💻 Pre-requisites
 
 Before you start, make sure you have met the following requirements:
@@ -31,7 +34,7 @@ npm start
 
 ## 🤝 Developer
 
-This project it was develop by:
+This project was developed by:
 
 <table>
   <tr>
